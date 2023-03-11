@@ -40,7 +40,7 @@ An __art portrait__ subset: https://www.kaggle.com/datasets/karnikakapoor/art-po
 
 ![image](https://user-images.githubusercontent.com/83327791/224470564-8b4f739c-ad4c-4f3a-84ac-b6d477afff23.png)
 
-## Preprocessing
+## Data Preprocessing
 The training dataset, consisting of art portraits, was preprocessed to reduce the image size to 64 x 64 for faster training and better memory efficiency. This was done using the PyTorch transforms module, which applies a series of image transformations to the dataset.
 
 First, the images were resized to the desired size using transforms.Resize(img_size). Then, a center crop of the same size was taken using transforms.CenterCrop(img_size) to ensure that all images are of the same size. To increase the diversity of the training dataset, transforms.RandomHorizontalFlip(p=0.5) was applied to randomly flip the images horizontally with a probability of 0.5.
@@ -56,7 +56,7 @@ Finally, to check that the preprocessing was done correctly, a batch of images a
 ![image](https://user-images.githubusercontent.com/83327791/224470783-c164bee6-4c6d-4933-99d4-9200f33cbe7d.png)
 
 ## Demonstration
-"To compare the generated images of the GAN without intrinsic reward and the GAN with intrinsic reward, 
+To compare the generated images of the GAN without intrinsic reward and the GAN with intrinsic reward, 
 I set the random seed as 3407 and applied weight initialization to the generator, discriminator, and intrinsic reward networks. 
 This ensured that both models used the same batch of real input images and a fixed (latent) noise vector for generating testing images.
 
@@ -65,13 +65,17 @@ This means there are 128 scalar values (noise) that the generator can adjust to 
 The larger the dimensionality of the latent space, the more complex outputs can be generated, 
 but the training process would be slower.
 
-__GAN without Intrinsic Reward:__
+__GAN without Intrinsic Reward after 50 epochs of training:__
 
 ![generated_images_no_intrinsic_reward](https://user-images.githubusercontent.com/83327791/224469386-479cc59b-b37d-4848-a8f8-dcfbccf39301.gif)
 
-__GAN with Intrinsic Reward__
+![image](https://user-images.githubusercontent.com/83327791/224470885-a5c85be6-3cd4-4733-ab5e-0ac2c81e7200.png)
+
+__GAN with Intrinsic Reward after 50 epochs of training__
 
 ![generated_images_intrinsic_reward](https://user-images.githubusercontent.com/83327791/224469391-b2110d9d-a0ed-4b46-b0eb-b93649f859ed.gif)
+
+![image](https://user-images.githubusercontent.com/83327791/224470868-23777437-a551-4483-be45-1848d225d10b.png)
 
 ## Challenge
 It is hard to compare the novelty of two set of images. 
