@@ -65,13 +65,17 @@ This means there are 128 scalar values (noise) that the generator can adjust to 
 The larger the dimensionality of the latent space, the more complex outputs can be generated, 
 but the training process would be slower.
 
-__GAN without Intrinsic Reward:__
+__GAN without Intrinsic Reward after 50 epochs of training:__
 
 ![generated_images_no_intrinsic_reward](https://user-images.githubusercontent.com/83327791/224469386-479cc59b-b37d-4848-a8f8-dcfbccf39301.gif)
 
-__GAN with Intrinsic Reward__
+![image](https://user-images.githubusercontent.com/83327791/224470885-a5c85be6-3cd4-4733-ab5e-0ac2c81e7200.png)
+
+__GAN with Intrinsic Reward after 50 epochs of training__
 
 ![generated_images_intrinsic_reward](https://user-images.githubusercontent.com/83327791/224469391-b2110d9d-a0ed-4b46-b0eb-b93649f859ed.gif)
+
+![image](https://user-images.githubusercontent.com/83327791/224470868-23777437-a551-4483-be45-1848d225d10b.png)
 
 ## Challenge
 It is hard to compare the novelty of two set of images. 
