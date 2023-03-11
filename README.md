@@ -56,7 +56,7 @@ Finally, to check that the preprocessing was done correctly, a batch of images a
 ![image](https://user-images.githubusercontent.com/83327791/224470783-c164bee6-4c6d-4933-99d4-9200f33cbe7d.png)
 
 ## Demonstration
-"To compare the generated images of the GAN without intrinsic reward and the GAN with intrinsic reward, 
+To compare the generated images of the GAN without intrinsic reward and the GAN with intrinsic reward, 
 I set the random seed as 3407 and applied weight initialization to the generator, discriminator, and intrinsic reward networks. 
 This ensured that both models used the same batch of real input images and a fixed (latent) noise vector for generating testing images.
 
