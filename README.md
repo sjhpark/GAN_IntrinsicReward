@@ -85,3 +85,12 @@ Some possible metrics are:
 - Wasserstein Distance
 - Entropy Score
 - Information Gain (not a metric)
+
+## Reference
+Some of my work (GAN concept, architecture, training process, etc.) was inspired by the following:
+- https://www.kaggle.com/code/wendykan/gan-dogs-starter
+- https://www.kaggle.com/code/jesucristo/gan-introduction
+
+
+
+
