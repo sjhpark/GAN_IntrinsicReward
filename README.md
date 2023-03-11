@@ -38,6 +38,23 @@ __Wiki-Art: Visual Art Encyclopedia__: https://www.kaggle.com/datasets/ipythonx/
 
 An __art portrait__ subset: https://www.kaggle.com/datasets/karnikakapoor/art-portraits
 
+![image](https://user-images.githubusercontent.com/83327791/224470564-8b4f739c-ad4c-4f3a-84ac-b6d477afff23.png)
+
+## Preprocessing
+The training dataset, consisting of art portraits, was preprocessed to reduce the image size to 64 x 64 for faster training and better memory efficiency. This was done using the PyTorch transforms module, which applies a series of image transformations to the dataset.
+
+First, the images were resized to the desired size using transforms.Resize(img_size). Then, a center crop of the same size was taken using transforms.CenterCrop(img_size) to ensure that all images are of the same size. To increase the diversity of the training dataset, transforms.RandomHorizontalFlip(p=0.5) was applied to randomly flip the images horizontally with a probability of 0.5.
+
+To further augment the dataset, random color jitter and rotation were applied to the images using transforms.ColorJitter() and transforms.RandomRotation(degrees=20). These transforms were randomly applied to each image with a probability of 0.2 using transforms.RandomApply(random_transforms, p=0.2).
+
+After the image transforms, the images were converted to PyTorch tensors using transforms.ToTensor(), and then normalized using transforms.Normalize(mean=(0.5,0.5,0.5), std=(0.5,0.5,0.5)). This ensures that the pixel values are in the range of [-1, 1], which is suitable for training GANs.
+
+The preprocessed dataset was then loaded into a PyTorch DataLoader with a specified batch size of 32, using DataLoader(train_data, batch_size=batch_size, shuffle=True). The shuffle=True argument ensures that the images are randomly shuffled before being loaded into each batch during training.
+
+Finally, to check that the preprocessing was done correctly, a batch of images and their corresponding labels were extracted from the train_loader using imgs, label = next(iter(train_loader)). The images were then transposed to have a shape of (batch_size, height, width, channels) using imgs = imgs.numpy().transpose(0, 2, 3, 1).
+
+![image](https://user-images.githubusercontent.com/83327791/224470783-c164bee6-4c6d-4933-99d4-9200f33cbe7d.png)
+
 ## Demonstration
 "To compare the generated images of the GAN without intrinsic reward and the GAN with intrinsic reward, 
 I set the random seed as 3407 and applied weight initialization to the generator, discriminator, and intrinsic reward networks. 
