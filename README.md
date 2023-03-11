@@ -40,7 +40,7 @@ An __art portrait__ subset: https://www.kaggle.com/datasets/karnikakapoor/art-po
 
 ![image](https://user-images.githubusercontent.com/83327791/224470564-8b4f739c-ad4c-4f3a-84ac-b6d477afff23.png)
 
-## Preprocessing
+## Data Preprocessing
 The training dataset, consisting of art portraits, was preprocessed to reduce the image size to 64 x 64 for faster training and better memory efficiency. This was done using the PyTorch transforms module, which applies a series of image transformations to the dataset.
 
 First, the images were resized to the desired size using transforms.Resize(img_size). Then, a center crop of the same size was taken using transforms.CenterCrop(img_size) to ensure that all images are of the same size. To increase the diversity of the training dataset, transforms.RandomHorizontalFlip(p=0.5) was applied to randomly flip the images horizontally with a probability of 0.5.
